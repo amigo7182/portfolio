@@ -1,0 +1,130 @@
+#root:has(.hero-shell) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-inline: 0;
+  text-align: left;
+}
+
+.hero-shell {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at top, rgba(187, 30, 52, 0.26), transparent 38%),
+    radial-gradient(circle at bottom, rgba(127, 10, 27, 0.45), transparent 50%),
+    linear-gradient(180deg, #090b11 0%, #040507 100%);
+}
+
+.hero-canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero-title {
+  letter-spacing: -0.08em;
+  text-shadow: 0 0 32px rgba(255, 255, 255, 0.2);
+}
+
+.hero-subtitle {
+  text-shadow: 0 0 22px rgba(255, 255, 255, 0.18);
+}
+
+.fade-in {
+  animation: hero-word-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.fade-in-subtitle {
+  animation: hero-subtitle-in 0.8s ease forwards;
+}
+
+.explore-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  padding: 0.9rem 1.35rem;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  animation: hero-cta-in 0.8s ease forwards;
+}
+
+.explore-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-svg {
+  animation: hero-arrow-float 1.6s ease-in-out infinite;
+}
+
+@keyframes hero-word-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.96);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-subtitle-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+    letter-spacing: 0.2em;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.02em;
+  }
+}
+
+@keyframes hero-cta-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes hero-arrow-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.35rem);
+  }
+}
