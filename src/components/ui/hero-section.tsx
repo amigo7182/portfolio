@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMode } from "../../context/ModeContext";
 import { SECTION_LABELS } from "../../config/modeLabels";
 

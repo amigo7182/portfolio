@@ -111,7 +111,6 @@ function ProjectModal({
   }, [onClose]);
 
   const accentText   = isMachine ? "text-[#7ab8c8]"                 : "text-[#8a7060]";
-  const techBorder   = isMachine ? "border-[rgba(122,184,200,0.2)]" : "border-[rgba(200,180,160,0.2)]";
   const dividerColor = isMachine ? "rgba(122,184,200,0.08)"         : "rgba(200,180,160,0.08)";
   const L = SECTION_LABELS.projects;
 
