@@ -82,6 +82,20 @@ export function Navbar() {
               ))}
             </ul>
 
+            {/* Resume button */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`font-mono text-xs uppercase tracking-[0.15em] px-4 py-1.5 border transition-colors duration-200 ${
+                mode === "machine"
+                  ? "border-[rgba(122,184,200,0.4)] text-[#7ab8c8] hover:border-[rgba(122,184,200,0.8)] hover:text-[#a8d8e8]"
+                  : "border-[rgba(200,180,160,0.4)] text-[#c8b4a0] hover:border-[rgba(200,180,160,0.8)] hover:text-[#f8f7f5]"
+              }`}
+            >
+              {mode === "machine" ? "/resume.pdf" : "Resume"}
+            </a>
+
             {/* Mode toggle — desktop */}
             <ModeToggle />
           </div>
@@ -123,6 +137,19 @@ export function Navbar() {
             {NAV_LABELS[label]?.[mode] ?? label}
           </a>
         ))}
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpen(false)}
+          className={`font-mono text-2xl uppercase tracking-[0.3em] px-6 py-2 border transition-colors duration-200 ${
+            mode === "machine"
+              ? "border-[rgba(122,184,200,0.4)] text-[#7ab8c8] hover:border-[rgba(122,184,200,0.8)]"
+              : "border-[rgba(200,180,160,0.4)] text-[#c8b4a0] hover:border-[rgba(200,180,160,0.8)] hover:text-[#f8f7f5]"
+          }`}
+        >
+          {mode === "machine" ? "/resume.pdf" : "Resume"}
+        </a>
       </div>
     </>
   );

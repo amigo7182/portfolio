@@ -6,35 +6,40 @@ import { AboutSection } from "./components/ui/about-section";
 import { EducationSection } from "./components/ui/education-section";
 import { ExperienceSection } from "./components/ui/experience-section";
 import { ContactSection } from "./components/ui/contact-section";
+import { MachineView } from "./components/ui/machine-view";
 import { useMode } from "./context/ModeContext";
 
 export default function App() {
-  // mode drives a key on the hero so its entrance animation replays on switch
   const { mode } = useMode();
+  const isMachine = mode === "machine";
 
   return (
-    <div className="bg-[#1a1d18]">
+    <div className={isMachine ? "bg-[#080c0f]" : "bg-[#1a1d18]"}>
       <Navbar />
-      <div id="home">
-        {/* key={mode} causes the hero to fully remount on mode change,
-            re-running the word-entrance animation in the new mode's text */}
-        <HeroSection key={mode} />
-      </div>
-      <div id="projects">
-        <ProjectsSection />
-      </div>
-      <div id="about">
-        <AboutSection />
-      </div>
-      <div id="education">
-        <EducationSection />
-      </div>
-      <div id="experience">
-        <ExperienceSection />
-      </div>
-      <div id="contact">
-        <ContactSection />
-      </div>
+      {isMachine ? (
+        <MachineView />
+      ) : (
+        <>
+          <div id="home">
+            <HeroSection key={mode} />
+          </div>
+          <div id="projects">
+            <ProjectsSection />
+          </div>
+          <div id="about">
+            <AboutSection />
+          </div>
+          <div id="education">
+            <EducationSection />
+          </div>
+          <div id="experience">
+            <ExperienceSection />
+          </div>
+          <div id="contact">
+            <ContactSection />
+          </div>
+        </>
+      )}
     </div>
   );
 }

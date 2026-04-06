@@ -92,7 +92,7 @@ export function ContactSection() {
           {isMachine ? "MAILTO:assetov.a@northeastern.edu" : "assetov.a@northeastern.edu"}
         </a>
 
-        {/* Social icons */}
+        {/* Social icons + Resume */}
         <div
           className={`flex items-center gap-8 transition-all duration-700 delay-300 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -114,6 +114,19 @@ export function ContactSection() {
               {icon}
             </a>
           ))}
+
+          {/* Resume download */}
+          <a
+            href="/resume.pdf"
+            download="Amirkhan_Assetov_Resume.pdf"
+            className={`font-mono text-xs uppercase tracking-[0.15em] px-4 py-1.5 border transition-colors duration-200 ${
+              isMachine
+                ? "border-[rgba(122,184,200,0.4)] text-[#7ab8c8] hover:border-[rgba(122,184,200,0.8)] hover:text-[#a8d8e8]"
+                : "border-[rgba(200,180,160,0.4)] text-[#c8b4a0] hover:border-[rgba(200,180,160,0.8)] hover:text-[#f8f7f5]"
+            }`}
+          >
+            {isMachine ? "↓ resume.pdf" : "↓ Resume"}
+          </a>
         </div>
 
         {/* Footer */}

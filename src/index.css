@@ -397,6 +397,19 @@ code {
 }
 
 /* ── Machine mode overrides ──────────────────────────────────────────────── */
+
+/* Fill the entire viewport with the machine-mode background */
+html[data-mode="machine"],
+html[data-mode="machine"] body {
+  background: #0d1117;
+}
+
+/* Remove the centered-column constraints so content fills edge-to-edge */
+html[data-mode="machine"] #root {
+  width: 100%;
+  border-inline: none;
+}
+
 /* Shift hero decorative elements to a cool cyan tint                         */
 
 [data-mode="machine"] .grid-line {
